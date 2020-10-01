@@ -10,6 +10,7 @@ const app = express()
 //midleWare
 app.use(cors());
 app.use(bodyParser.json());
+const port = 5000;
 
 
 
@@ -79,7 +80,7 @@ client.connect(err => {
 
 
 
-app.get('/', (req, res) => {
-    res.send('Hello World! iam the author of this website. this site name is Ema Johan siple')
-})
-app.listen(5000)
+// app.get('/', (req, res) => {
+//     res.send('Hello World! iam the author of this website. this site name is Ema Johan siple')
+// })
+app.listen(process.env.PORT || port)

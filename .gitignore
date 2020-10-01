@@ -1,0 +1,15 @@
+node_modules/
+.env
+configs/
+
+# how to Start ?
+    
+# git init
+# npm install express mongodb body-parser cors
+# npm install nodemon --save-dev
+# npm install dotenv
+
+
+# how to setUp nodemon?
+
+# "start": "nodemon index.js",

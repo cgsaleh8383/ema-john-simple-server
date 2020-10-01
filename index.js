@@ -13,6 +13,12 @@ app.use(bodyParser.json());
 const port = 5000;
 
 
+//Rout
+app.get('/', (req, res) => {
+    res.send("Hello This Site is Working!");
+})
+
+
 
 
 

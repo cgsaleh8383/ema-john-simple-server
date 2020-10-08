@@ -20,8 +20,6 @@ app.get('/', (req, res) => {
 
 
 
-
-
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
     const productsCollection = client.db("emajohanStore").collection("products");
@@ -40,7 +38,8 @@ client.connect(err => {
 
     //Ride
     app.get('/products', (req, res) => {
-        productsCollection.find({})
+        const search = req.query.search;
+        productsCollection.find({ name: { $regex: search}})
         .toArray((err, documents) => {
             res.send(documents)
         })
@@ -75,13 +74,6 @@ client.connect(err => {
     })
    
 });
-
-
-
-
-
-
-
 
 
 
